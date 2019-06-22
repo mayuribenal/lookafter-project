@@ -104,7 +104,16 @@ module.exports.addMessage = function(id, message) {
 
 module.exports.addEvent = function(id, hood, name, start, end) {
   return db.query(
-    `INSERT INTO calendar (user_id, hood, title, event_start, event_end)
+    `INSERT INTO calendar_need (user_id, hood, title, event_start, event_end)
+        VALUES ($1, $2, $3, $4, $5)
+        RETURNING title, hood, event_start AS start, event_end AS end`,
+    [id, hood, name, start, end]
+  );
+};
+
+module.exports.addEvent = function(id, hood, name, start, end) {
+  return db.query(
+    `INSERT INTO calendar_offer (user_id, hood, title, event_start, event_end)
         VALUES ($1, $2, $3, $4, $5)
         RETURNING title, hood, event_start AS start, event_end AS end`,
     [id, hood, name, start, end]
@@ -114,7 +123,15 @@ module.exports.addEvent = function(id, hood, name, start, end) {
 module.exports.getEvents = function() {
   return db.query(
     `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
-        FROM calendar
+        FROM calendar_offer
+        ORDER BY event_start ASC`
+  );
+};
+
+module.exports.getEvents = function() {
+  return db.query(
+    `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
+        FROM calendar_need
         ORDER BY event_start ASC`
   );
 };
@@ -124,7 +141,11 @@ module.exports.gethood = function(id) {
 };
 
 module.exports.removeEvent = function(id) {
-  return db.query(`DELETE FROM calendar WHERE id = $1`, [id]);
+  return db.query(`DELETE FROM calendar_offer WHERE id = $1`, [id]);
+};
+
+module.exports.removeEvent = function(id) {
+  return db.query(`DELETE FROM calendar_need WHERE id = $1`, [id]);
 };
 
 module.exports.getMembers = function() {

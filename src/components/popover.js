@@ -37,7 +37,9 @@ class Popover extends React.Component {
           </div>
           <div className="event-info">
             <h3 className="capitalize">{this.props.eventInfo.title}</h3>
-            <p className="capitalize">Booked by {this.props.eventInfo.hood}</p>
+            <p className="capitalize">
+              reserved in {this.props.eventInfo.hood}
+            </p>
             <p>
               {moment(this.props.eventInfo.start).format('DD MMM')} to{' '}
               {moment(this.props.eventInfo.end).format('DD MMM')}
@@ -52,10 +54,10 @@ class Popover extends React.Component {
                 this.remove(this.props.eventInfo.id, this.props.eventInfo.hood)
               }
             >
-              Remove
+              remove
             </button>
             {this.state.error && (
-              <p className="error">Sorry, you cannot remove this event.</p>
+              <p className="error">sorry, you cannot remove this.</p>
             )}
           </div>
         </div>

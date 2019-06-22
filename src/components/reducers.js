@@ -61,10 +61,10 @@ export default function(state = {}, action) {
     };
   }
   if (action.type == 'ADD_EVENT') {
-    const newStudioEvents = state.reserveEvents.concat(action.newEvent);
+    const addNewEvents = state.reserveEvents.concat(action.newEvent);
     state = {
       ...state,
-      reserveEvents: newStudioEvents
+      reserveEvents: addNewEvents
     };
   }
   if (action.type == 'REMOVE_EVENT') {

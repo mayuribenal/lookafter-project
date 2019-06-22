@@ -19,7 +19,7 @@
   margin: 0;
 }
 .rc-time-picker-clear-icon:after {
-  content: "x";
+  content: 'x';
   font-size: 12px;
   font-style: normal;
   color: #aaa;
@@ -47,7 +47,9 @@
   background-image: none;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
-  transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+    background 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+    box-shadow 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .rc-time-picker-input[disabled] {
   color: #ccc;
@@ -141,9 +143,9 @@
   text-align: left;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .rc-time-picker-panel-select li:hover {
   background: #edfaff;

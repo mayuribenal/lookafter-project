@@ -47,6 +47,7 @@ app.post('/register', async (req, res) => {
     const hash = await bcrypt.hash(req.body.password);
     const user = await db.registerUser(first, last, hood, email, hash);
     req.session.userId = user.rows[0].id;
+    req.session.hood = req.body.hood;
     res.json({
       success: true
     });
@@ -62,6 +63,7 @@ app.post('/login', async (req, res) => {
     const bool = await bcrypt.compare(req.body.password, pass.rows[0].password);
     if (bool == true) {
       req.session.userId = pass.rows[0].id;
+      req.session.hood = data.rows[0].hood;
       res.json({
         success: true
       });
@@ -121,7 +123,7 @@ app.post('/upload', uploader.single('file'), s3.upload, async (req, res) => {
 
 app.get('/get-events', async (req, res) => {
   try {
-    const events = await db.getEvents();
+    const events = await db.getEvents(req.session.hood);
     console.log('MY EVENTS rows:', events.rows);
     res.send(events.rows);
   } catch (err) {

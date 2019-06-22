@@ -5,7 +5,8 @@ import { loggedInUser, getStudioEvents, getMembers } from './actions';
 import Navigation from './navigation';
 import Home from './home';
 import Chat from './chat';
-import Calendar from './calendar';
+import CalendarOffer from './calendar-offer';
+import CalendarNeed from './calendar-need';
 import Profile from './profile';
 
 class App extends React.Component {
@@ -20,9 +21,10 @@ class App extends React.Component {
         <div className="app">
           <Route exact path="/" render={() => <Home />} />
           <Navigation />
-          <Route path="/profile" component={Profile} />
-          <Route path="/calendar" component={Calendar} />
           <Route path="/home" component={Home} />
+          <Route path="/calendar-offer" component={CalendarOffer} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/calendar-need" component={CalendarNeed} />
           <Route path="/chat" component={Chat} />
         </div>
       </BrowserRouter>

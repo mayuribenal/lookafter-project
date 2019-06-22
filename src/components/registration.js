@@ -15,6 +15,12 @@ class Registration extends React.Component {
     };
   }
 
+  onSelect(mytarget) {
+    this.setState({
+      hood: mytarget
+    });
+  }
+
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -66,15 +72,21 @@ class Registration extends React.Component {
             <span className="focus-border" />
           </div>
           <div className="input-field">
-            <input
-              onChange={this.onChange}
+            <select
+              className="hood-select"
               name="hood"
-              className="effect"
-              type="text"
-              placeholder="hood"
-              autoComplete="off"
-              value={this.state.hood}
-            />
+              placeholder="pick your favorite bug..."
+              onChange={e => {
+                let mytarget = e.target;
+                this.onSelect(mytarget[mytarget.selectedIndex].text);
+              }}
+            >
+              <option value="">select your area...</option>
+              <option value="kreuzberg">Kreuzberg</option>
+              <option value="mitte">Mitte</option>
+              <option value="neukoelln">Prenzlauer Berg</option>
+              <option value="schoeneberg">Schöneberg</option>
+            </select>
             <span className="focus-border" />
           </div>
           <div className="input-field">
@@ -99,6 +111,7 @@ class Registration extends React.Component {
               autoComplete="off"
               value={this.state.password}
             />
+
             <span className="focus-border" />
           </div>
           <button type="submit">register</button>

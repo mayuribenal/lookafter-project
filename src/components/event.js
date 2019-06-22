@@ -92,13 +92,15 @@ class Event extends React.Component {
             <div className="calendar-container">
               <img className="calendar-icon" src="calendar.png" />
               <button className="event-button" onClick={this.bookEvent}>
-                Book studio
+                reserve dates
               </button>
               {this.state.notAllowed && (
-                <div className="error">You cannot book in the past!</div>
+                <div className="error">
+                  ops, you cannot reserve in the past!
+                </div>
               )}
               {this.state.error && (
-                <div className="error">Ops... Please try again!</div>
+                <div className="error">ops... please try again!</div>
               )}
             </div>
           </div>

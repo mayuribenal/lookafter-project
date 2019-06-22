@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS calendar;
+DROP TABLE IF EXISTS calendar_offer;
 
-CREATE TABLE calendar (
+CREATE TABLE calendar_offer (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES users(id),
     hood VARCHAR,

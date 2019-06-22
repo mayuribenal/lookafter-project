@@ -22,26 +22,46 @@ class Navigation extends React.Component {
       <div className="navigation">
         <div className="nav-section">
           <Link to="/home" className="link">
-            <img src="home.png" />
+            <div className="nav-items">
+              <img src="home.png" />
+              <p>home</p>
+            </div>
+          </Link>
+        </div>
+        <div className="nav-section">
+          <Link to="/calendar-offer" className="link">
+            <div className="nav-items">
+              <img src="calendaroffer.png" />
+              <p>offer</p>
+            </div>
           </Link>
         </div>
         <div className="nav-section">
           <Link to="/profile" className="link">
-            <img src="profile.png" />
+            <img src="user.png" />
           </Link>
         </div>
         <div className="nav-section">
-          <Link to="/calendar" className="link">
-            <img src="calendar.png" />
+          <Link to="/calendar-need" className="link">
+            <div className="nav-items">
+              <img src="calendarneed.png" />
+              <p>need</p>
+            </div>
           </Link>
         </div>
         <div className="nav-section">
           <Link to="/chat" className="link">
-            <img src="chat.png" />
+            <div className="nav-items">
+              <img src="chats.png" />
+              <p>chat</p>
+            </div>
           </Link>
         </div>
         <div className="nav-section" onClick={this.logout}>
-          <img src="logout.png" />
+          <div className="nav-items">
+            <img src="logout.png" />
+            <p>log out</p>
+          </div>
         </div>
       </div>
     );

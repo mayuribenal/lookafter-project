@@ -8,7 +8,7 @@ import { setEventEditorVisible, displayDate } from './actions';
 import CustomToolbar from './custom-toolbar';
 const localizer = BigCalendar.momentLocalizer(moment);
 
-class Calendar extends React.Component {
+class CalendarOffer extends React.Component {
   constructor() {
     super();
     this.state = {};
@@ -106,4 +106,4 @@ const mapStateToProps = function(state) {
   };
 };
 
-export default connect(mapStateToProps)(Calendar);
+export default connect(mapStateToProps)(CalendarOffer);
