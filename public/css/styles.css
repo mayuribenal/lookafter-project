@@ -69,12 +69,6 @@ button:active {
   width: 350px;
   align-self: center;
 }
-/* .cat-anim.duration {
-  animation-timing-function: linear;
-  animation-duration: 5s;
-  animation-direction: forwards;
-  left: 100%;
-} */
 
 .welcome {
   display: flex;
@@ -214,6 +208,11 @@ input[type='password'] {
   margin: 0;
 }
 
+.nav-items logo {
+  height: 60px;
+  width: 60px;
+}
+
 /* COMMON STUFF */
 
 .main {
@@ -251,7 +250,7 @@ input[type='password'] {
   height: 300px;
   width: 300px;
   position: relative;
-  /* margin: 20px; */
+  margin: 20px;
 }
 
 .profilepic {
@@ -281,11 +280,12 @@ label {
 }
 
 .profile-info {
-  width: 35%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-self: flex-start;
 }
 
 .profile-info h2 {
@@ -309,12 +309,29 @@ label {
 
 .userEvents {
   /* background: rgb(203, 224, 227); */
-  width: 65%;
+  width: 100%;
   /* height: 100; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: scroll;
+}
+.userEventsNeed {
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: scroll;
+  align-self: flex-start;
+}
+
+.userEventsOffer {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  align-self: flex-start;
 }
 
 .userEvents h2 {

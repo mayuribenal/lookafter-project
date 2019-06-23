@@ -53,7 +53,7 @@ class Registration extends React.Component {
               name="first"
               className="effect"
               type="text"
-              placeholder="first Name"
+              placeholder="first name"
               autoComplete="off"
               value={this.state.first}
             />
@@ -65,7 +65,7 @@ class Registration extends React.Component {
               name="last"
               className="effect"
               type="text"
-              placeholder="last Name"
+              placeholder="last name"
               autoComplete="off"
               value={this.state.last}
             />

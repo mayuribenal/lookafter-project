@@ -48,11 +48,6 @@ export default function(state = {}, action) {
     };
   }
   if (action.type == 'DISPLAY_DATE') {
-    // console.log(
-    //   'DISPLAY DATE',
-    //   String(action.start),
-    //   action.end.toLocaleString()
-    // );
     state = {
       ...state,
       start: String(action.start),
@@ -62,41 +57,45 @@ export default function(state = {}, action) {
   if (action.type == 'DATE_EVENTS_OFFER') {
     state = {
       ...state,
-      reserveEvents: action.events
+      reserveEventsOffer: action.events
     };
   }
   if (action.type == 'DATE_EVENTS_NEED') {
     state = {
       ...state,
-      reserveEvents: action.events
+      reserveEventsNeed: action.events
     };
   }
   if (action.type == 'ADD_EVENT_OFFER') {
-    const addNewEvents = state.reserveEvents.concat(action.newEvent);
+    const addNewEventsOffer = state.reserveEventsOffer.concat(action.newEvent);
     state = {
       ...state,
-      reserveEvents: addNewEvents
+      reserveEventsOffer: addNewEventsOffer
     };
   }
 
   if (action.type == 'ADD_EVENT_NEED') {
-    const addNewEvents = state.reserveEvents.concat(action.newEvent);
+    const addNewEventsNeed = state.reserveEventsNeed.concat(action.newEvent);
     state = {
       ...state,
-      reserveEvents: addNewEvents
+      reserveEventsNeed: addNewEventsNeed
     };
   }
   if (action.type == 'REMOVE_EVENT_OFFER') {
     state = {
       ...state,
-      reserveEvents: state.reserveEvents.filter(ev => ev.id != action.id)
+      reserveEventsOffer: state.reserveEventsOffer.filter(
+        ev => ev.id != action.id
+      )
     };
   }
 
   if (action.type == 'REMOVE_EVENT_NEED') {
     state = {
       ...state,
-      reserveEvents: state.reserveEvents.filter(ev => ev.id != action.id)
+      reserveEventsNeed: state.reserveEventsNeed.filter(
+        ev => ev.id != action.id
+      )
     };
   }
 

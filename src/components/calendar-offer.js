@@ -38,7 +38,7 @@ class CalendarOffer extends React.Component {
     });
   }
   render() {
-    const { reserveEvents, eventEditorVisible } = this.props;
+    const { reserveEventsOffer, eventEditorVisible } = this.props;
     const currentDateTime = moment().toDate();
 
     return (
@@ -53,7 +53,7 @@ class CalendarOffer extends React.Component {
               defaultDate={currentDateTime}
               selectable
               localizer={localizer}
-              events={reserveEvents || []}
+              events={reserveEventsOffer || []}
               timeslots={4}
               startAccessor="start"
               endAccessor="end"
@@ -104,7 +104,7 @@ class CalendarOffer extends React.Component {
 const mapStateToProps = function(state) {
   return {
     eventEditorVisible: state.eventEditorVisible,
-    reserveEvents: state.reserveEvents,
+    reserveEventsOffer: state.reserveEventsOffer,
     user: state.user
   };
 };

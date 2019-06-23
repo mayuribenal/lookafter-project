@@ -41,7 +41,8 @@ class App extends React.Component {
 const mapStateToProps = function(state) {
   return {
     user: state.user,
-    reserveEvents: state.reserveEvents
+    reserveEventsNeed: state.reserveEventsNeed,
+    reserveEventsOffer: state.reserveEventsOffer
   };
 };
 

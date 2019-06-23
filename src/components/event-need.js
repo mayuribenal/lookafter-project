@@ -115,7 +115,7 @@ const mapStateToProps = function(state) {
   return {
     start: state.start,
     end: state.end,
-    reserveEvents: state.reserveEvents,
+    reserveEventsNeed: state.reserveEventsNeed,
     user: state.user
   };
 };

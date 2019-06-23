@@ -22,9 +22,8 @@ class Navigation extends React.Component {
       <div className="navigation">
         <div className="nav-section">
           <Link to="/home" className="link">
-            <div className="nav-items">
-              <img src="home.png" />
-              <p>home</p>
+            <div className="nav-items logo">
+              <img src="50bw.png" />
             </div>
           </Link>
         </div>
