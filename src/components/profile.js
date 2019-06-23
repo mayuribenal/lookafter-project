@@ -20,7 +20,7 @@ class Profile extends React.Component {
       .filter(ev => user.hood == ev.hood && a <= ev.end)
       .map(ev => {
         return (
-          <div className="schedule-container" key={ev.id}>
+          <div className="schedule-container-need" key={ev.id}>
             <h3>{ev.title}</h3>
             <p>
               from {moment(ev.start).format('D MMM YYYY')} to{' '}
@@ -33,7 +33,7 @@ class Profile extends React.Component {
       .filter(ev => user.hood == ev.hood && a <= ev.end)
       .map(ev => {
         return (
-          <div className="schedule-container" key={ev.id}>
+          <div className="schedule-container-offer " key={ev.id}>
             <h3>{ev.title}</h3>
             <p>
               from {moment(ev.start).format('D MMM YYYY')} to{' '}
@@ -46,26 +46,32 @@ class Profile extends React.Component {
       <div className="main">
         <div className="userEvents">
           <div className="userEventsNeed">
-            <h2>
-              your lookafters need in{' '}
-              <span className="capitalize">{user.hood}</span>
-            </h2>
+            <div className="event-title">
+              <img src="heart.png" className="icon-events" />
+              <h2>
+                you lookafter need in{' '}
+                <span className="capitalize">{user.hood}</span>
+              </h2>
+            </div>
             {userEventsNeed}
           </div>
           <div className="profile-info">
             <div className="profilepic-container">
-              <img
-                className="profilepic"
-                src={user.pic || 'user.png'}
-                onClick={() => this.props.dispatch(setUploaderVisible())}
-              />
-              {uploaderVisible && <Uploader />}
+              <div className="profilepic-uploader">
+                <img
+                  className="profilepic"
+                  src={user.pic || 'user.png'}
+                  onClick={() => this.props.dispatch(setUploaderVisible())}
+                />
+                {uploaderVisible && <Uploader />}
+              </div>
             </div>
             <h2 className="capitalize">welcome, {user.first}!</h2>
           </div>
           <div className="userEventsOffer">
+            <img src="magnifier-tool.png" className="icon-events" />
             <h2>
-              your lookafters offer in{' '}
+              your lookafter support in{' '}
               <span className="capitalize">{user.hood}</span>
             </h2>
             {userEventsOffer}

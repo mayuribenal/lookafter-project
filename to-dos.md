@@ -5,6 +5,7 @@ style
 3. remove title and time from event and add members picture
 4. scroll both events on profile.js
 5. resize lookafter logo on navbar
+6. position fixed 'event-title' when scrolling
 
 bugs
 
