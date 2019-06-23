@@ -46,6 +46,7 @@
         "react-dom": "^16.2.0",
         "react-dropdown-timepicker": "^1.0.4",
         "react-redux": "^5.0.5",
+        "react-reveal": "^1.2.2",
         "react-router": "^4.2.0",
         "react-router-dom": "^4.2.2",
         "react-test-renderer": "^16.6.0",

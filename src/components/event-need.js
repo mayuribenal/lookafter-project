@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import axios from './axios';
 import TimePicker from 'rc-time-picker';
-import { closeEventEditor, addEvent } from './actions';
+import { closeEventEditor, addEventNeed } from './actions';
 
 class Event extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Event extends React.Component {
       .value;
     let bookedEvent = document.querySelector('input').value;
     axios
-      .post('/book-studio', {
+      .post('/reserve-date-need', {
         start: moment(this.props.start).format('D MMM YYYY') + ' ' + start,
         end: moment(this.props.end).format('D MMM YYYY') + ' ' + end,
         title: bookedEvent
@@ -35,11 +35,12 @@ class Event extends React.Component {
             notAllowed: true
           });
         } else {
+          console.log('MY LOOP BOOKING EVENT: ', data);
           for (var i = 0; i < data.length; i++) {
             data[i].start = moment(data[i].start).toDate();
             data[i].end = moment(data[i].end).toDate();
           }
-          this.props.dispatch(addEvent(data[0]));
+          this.props.dispatch(addEventNeed(data[0]));
           this.props.dispatch(closeEventEditor());
         }
       })
@@ -74,7 +75,7 @@ class Event extends React.Component {
               <img className="calendar-icon" src="clock.png" />
               <span className="time-picker-date">
                 {moment(start).format('D MMM YYYY')} -{' '}
-                {moment(end).format('D MMM YYYY')}
+                {moment(end).format('D MM YYYY')}
               </span>
               <TimePicker
                 showSecond={false}

@@ -63,7 +63,7 @@ app.post('/login', async (req, res) => {
     const bool = await bcrypt.compare(req.body.password, pass.rows[0].password);
     if (bool == true) {
       req.session.userId = pass.rows[0].id;
-      req.session.hood = data.rows[0].hood;
+      // req.session.hood = data.rows[0].hood;
       res.json({
         success: true
       });
@@ -121,18 +121,28 @@ app.post('/upload', uploader.single('file'), s3.upload, async (req, res) => {
 
 //CALENDAR
 
-app.get('/get-events', async (req, res) => {
+app.get('/get-events-offer', async (req, res) => {
   try {
-    const events = await db.getEvents(req.session.hood);
-    console.log('MY EVENTS rows:', events.rows);
+    const events = await db.getEventsOffer(req.session.hood);
+
     res.send(events.rows);
   } catch (err) {
     console.log(err);
   }
 });
 
-app.post('/book-studio', async (req, res) => {
-  var now = moment().format('D MMM YYYY kk:mm');
+app.get('/get-events-need', async (req, res) => {
+  try {
+    const events = await db.getEventsNeed(req.session.hood);
+
+    res.send(events.rows);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.post('/reserve-date-offer', async (req, res) => {
+  var now = moment().format('DD MM YYYY kk:mm');
   if (moment(req.body.start).isBefore(now)) {
     res.send({
       response: 'No bookings in the past allowed'
@@ -142,7 +152,7 @@ app.post('/book-studio', async (req, res) => {
       const hood = await db.gethood(req.session.userId);
       const start = moment(req.body.start).format();
       const end = moment(req.body.end).format();
-      const addEv = await db.addEvent(
+      const addEv = await db.addEventOffer(
         req.session.userId,
         hood.rows[0].hood,
         req.body.title,
@@ -159,10 +169,55 @@ app.post('/book-studio', async (req, res) => {
   }
 });
 
-app.post('/remove-event', async (req, res) => {
+app.post('/reserve-date-need', async (req, res) => {
+  var now = moment().format('DD MM YYYY kk:mm');
+  if (moment(req.body.start).isBefore(now)) {
+    res.send({
+      response: 'No bookings in the past allowed'
+    });
+  } else {
+    try {
+      const hood = await db.gethood(req.session.userId);
+      const start = moment(req.body.start).format();
+      const end = moment(req.body.end).format();
+      const addEv = await db.addEventNeed(
+        req.session.userId,
+        hood.rows[0].hood,
+        req.body.title,
+        start,
+        end
+      );
+      res.send(addEv.rows);
+    } catch (err) {
+      console.log(err);
+      res.send({
+        error: 'error in updating claendar'
+      });
+    }
+  }
+});
+
+app.post('/remove-event-offer', async (req, res) => {
   const hood = await db.gethood(req.session.userId);
   if (hood.rows[0].hood == req.body.hood) {
-    db.removeEvent(req.body.id)
+    db.removeEventOffer(req.body.id)
+      .then(() => {
+        res.send({
+          removed: true
+        });
+      })
+      .catch(err => console.log(err));
+  } else {
+    res.send({
+      response: "Sorry, you can't remove this event"
+    });
+  }
+});
+
+app.post('/remove-event-need', async (req, res) => {
+  const hood = await db.gethood(req.session.userId);
+  if (hood.rows[0].hood == req.body.hood) {
+    db.removeEventNeed(req.body.id)
       .then(() => {
         res.send({
           removed: true

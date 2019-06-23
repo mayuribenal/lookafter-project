@@ -51,38 +51,6 @@ module.exports.addProfilePic = function(profilepic, id) {
   );
 };
 
-module.exports.getGear = function() {
-  return db.query(
-    `SELECT *
-        FROM gear`
-  );
-};
-
-module.exports.addGear = function(type, item, owner, shared) {
-  return db.query(
-    `INSERT INTO gear (type, item, owner, shared)
-        VALUES ($1, $2, $3, $4)
-        RETURNING *`,
-    [type, item, owner, shared]
-  );
-};
-
-module.exports.getItem = function(id) {
-  return db.query(
-    `SELECT * FROM gear
-        WHERE id = $1`,
-    [id]
-  );
-};
-
-module.exports.removeItem = function(id) {
-  return db.query(
-    `DELETE FROM gear
-        WHERE id = $1`,
-    [id]
-  );
-};
-
 module.exports.getChat = function() {
   return db.query(
     `SELECT chat.id, chat.user_id, users.first, chat.message, created_at, users.last, users.img
@@ -102,7 +70,7 @@ module.exports.addMessage = function(id, message) {
   );
 };
 
-module.exports.addEvent = function(id, hood, name, start, end) {
+module.exports.addEventNeed = function(id, hood, name, start, end) {
   return db.query(
     `INSERT INTO calendar_need (user_id, hood, title, event_start, event_end)
         VALUES ($1, $2, $3, $4, $5)
@@ -111,7 +79,7 @@ module.exports.addEvent = function(id, hood, name, start, end) {
   );
 };
 
-module.exports.addEvent = function(id, hood, name, start, end) {
+module.exports.addEventOffer = function(id, hood, name, start, end) {
   return db.query(
     `INSERT INTO calendar_offer (user_id, hood, title, event_start, event_end)
         VALUES ($1, $2, $3, $4, $5)
@@ -120,7 +88,7 @@ module.exports.addEvent = function(id, hood, name, start, end) {
   );
 };
 
-module.exports.getEvents = function() {
+module.exports.getEventsOffer = function() {
   return db.query(
     `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
         FROM calendar_offer
@@ -128,7 +96,7 @@ module.exports.getEvents = function() {
   );
 };
 
-module.exports.getEvents = function() {
+module.exports.getEventsNeed = function() {
   return db.query(
     `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
         FROM calendar_need
@@ -140,11 +108,11 @@ module.exports.gethood = function(id) {
   return db.query(`SELECT hood FROM users WHERE id = $1`, [id]);
 };
 
-module.exports.removeEvent = function(id) {
+module.exports.removeEventOffer = function(id) {
   return db.query(`DELETE FROM calendar_offer WHERE id = $1`, [id]);
 };
 
-module.exports.removeEvent = function(id) {
+module.exports.removeEventNeed = function(id) {
   return db.query(`DELETE FROM calendar_need WHERE id = $1`, [id]);
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import axios from './axios';
 import { connect } from 'react-redux';
-import { removeEvent } from './actions';
+import { removeEventNeed } from './actions';
 
 class Popover extends React.Component {
   constructor(props) {
@@ -12,14 +12,14 @@ class Popover extends React.Component {
   }
   remove(id, hood) {
     axios
-      .post('remove-event', {
+      .post('remove-event-need', {
         id: id,
         hood: hood
       })
       .then(({ data }) => {
         if (!data.response) {
           console.log('my data from event:', data.response);
-          this.props.dispatch(removeEvent(id));
+          this.props.dispatch(removeEventNeed(id));
           this.props.closeEvent();
         } else {
           this.setState({

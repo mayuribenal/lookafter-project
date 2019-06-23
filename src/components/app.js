@@ -1,7 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loggedInUser, getStudioEvents, getMembers } from './actions';
+import {
+  loggedInUser,
+  getDatesOffer,
+  getDatesNeed,
+  getMembers
+} from './actions';
 import Navigation from './navigation';
 import Home from './home';
 import Chat from './chat';
@@ -12,7 +17,8 @@ import Profile from './profile';
 class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(loggedInUser());
-    this.props.dispatch(getStudioEvents());
+    this.props.dispatch(getDatesOffer());
+    this.props.dispatch(getDatesNeed());
     this.props.dispatch(getMembers());
   }
   render() {

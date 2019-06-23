@@ -30,8 +30,7 @@ class Login extends React.Component {
       <div className="login">
         {this.state.error && (
           <div className="error">
-            The username and password did not match our records. Please
-            double-check and try again.
+            user or password does not exist. please try again.
           </div>
         )}
         <form className="form-welcome" onSubmit={this.onFormSubmit}>
@@ -41,7 +40,7 @@ class Login extends React.Component {
               name="email"
               className="effect"
               type="text"
-              placeholder="Email address"
+              placeholder="email"
               autoComplete="off"
               value={this.state.email}
             />
@@ -53,15 +52,15 @@ class Login extends React.Component {
               name="password"
               className="effect"
               type="password"
-              placeholder="Password"
+              placeholder="password"
               autoComplete="off"
             />
             <span className="focus-border" />
           </div>
-          <button type="submit">Log in</button>
+          <button type="submit">log in</button>
         </form>
         <p>
-          Back to{' '}
+          go to{' '}
           <Link to="/" className="link">
             registration
           </Link>

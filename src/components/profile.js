@@ -18,12 +18,12 @@ class Profile extends React.Component {
           <div className="schedule-container" key={ev.id}>
             <h3>{ev.title}</h3>
             <p>
-              {moment(ev.start).format('DD MMM')} to{' '}
-              {moment(ev.end).format('DD MMM')}
+              {moment(ev.start).format('DD MM')} to{' '}
+              {moment(ev.end).format('DD MM')}
             </p>
             <p>
-              From {moment(ev.start).format('HH:mm')} to{' '}
-              {moment(ev.end).format('HH:mm')}
+              From {moment(ev.start).format('DD MM')} to{' '}
+              {moment(ev.end).format('DD MM')}
             </p>
           </div>
         );

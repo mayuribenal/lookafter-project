@@ -2,15 +2,27 @@ import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import Registration from './registration';
 import Login from './login';
+import Fade from 'react-reveal/Fade';
 
 const Welcome = () => {
   return (
     <div className="welcome">
-      <img src="./400bw.png" />
+      <Fade left>
+        <img id="logofront" src="./400bw.png" />
+      </Fade>
+
       <HashRouter>
         <div>
-          <Route exact path="/" component={Registration} />
-          <Route path="/login" component={Login} />
+          <div>
+            <Fade right>
+              <Route exact path="/" component={Registration} />
+            </Fade>
+          </div>
+          <div>
+            <Fade right>
+              <Route path="/login" component={Login} />
+            </Fade>
+          </div>
         </div>
       </HashRouter>
     </div>
@@ -18,3 +30,6 @@ const Welcome = () => {
 };
 
 export default Welcome;
+// <div className="cat-anim">
+// <img id='cat' src="./walking.gif" />
+// </div>

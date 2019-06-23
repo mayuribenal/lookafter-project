@@ -2,8 +2,8 @@ import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import Event from './event.js';
-import Popover from './popover';
+import Event from './event-need.js';
+import Popover from './popover-need';
 import { setEventEditorVisible, displayDate } from './actions';
 import CustomToolbar from './custom-toolbar';
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -44,6 +44,9 @@ class CalendarNeed extends React.Component {
     return (
       <div className="main">
         <div className="calendar-main">
+          <h1>
+            your <img src="./400bw.png" width="150px" /> need
+          </h1>
           <div className="calendar">
             <BigCalendar
               scrollToTime={currentDateTime}

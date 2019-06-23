@@ -64,28 +64,54 @@ export function displayDate(start, end) {
   };
 }
 
-export function addEvent(newEvent) {
+export function addEventOffer(newEvent) {
   return {
-    type: 'ADD_EVENT',
+    type: 'ADD_EVENT_OFFER',
     newEvent
   };
 }
 
-export async function removeEvent(id) {
+export function addEventNeed(newEvent) {
   return {
-    type: 'REMOVE_EVENT',
+    type: 'ADD_EVENT_NEED',
+    newEvent
+  };
+}
+
+export async function removeEventOffer(id) {
+  return {
+    type: 'REMOVE_EVENT_OFFER',
     id
   };
 }
 
-export async function getStudioEvents() {
-  const events = await axios.get('/get-events');
+export async function removeEventNeed(id) {
+  return {
+    type: 'REMOVE_EVENT_NEED',
+    id
+  };
+}
+
+export async function getDatesOffer() {
+  const events = await axios.get('/get-events-offer');
   for (let i = 0; i < events.data.length; i++) {
     events.data[i].start = moment(events.data[i].start).toDate();
     events.data[i].end = moment(events.data[i].end).toDate();
   }
   return {
-    type: 'STUDIO_EVENTS',
+    type: 'DATE_EVENTS_OFFER',
+    events: events.data
+  };
+}
+
+export async function getDatesNeed() {
+  const events = await axios.get('/get-events-need');
+  for (let i = 0; i < events.data.length; i++) {
+    events.data[i].start = moment(events.data[i].start).toDate();
+    events.data[i].end = moment(events.data[i].end).toDate();
+  }
+  return {
+    type: 'DATE_EVENTS_NEED',
     events: events.data
   };
 }

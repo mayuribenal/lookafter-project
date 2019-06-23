@@ -44,7 +44,7 @@ class Registration extends React.Component {
     return (
       <div className="register">
         {this.state.error && (
-          <div className="error">Ops... Please try again!</div>
+          <div className="error">ops... Please try again!</div>
         )}
         <form className="form-welcome" onSubmit={this.onFormSubmit}>
           <div className="input-field">
@@ -53,7 +53,7 @@ class Registration extends React.Component {
               name="first"
               className="effect"
               type="text"
-              placeholder="First Name"
+              placeholder="first Name"
               autoComplete="off"
               value={this.state.first}
             />
@@ -65,28 +65,31 @@ class Registration extends React.Component {
               name="last"
               className="effect"
               type="text"
-              placeholder="Last Name"
+              placeholder="last Name"
               autoComplete="off"
               value={this.state.last}
             />
             <span className="focus-border" />
           </div>
           <div className="input-field">
-            <select
-              className="hood-select"
-              name="hood"
-              placeholder="pick your favorite bug..."
-              onChange={e => {
-                let mytarget = e.target;
-                this.onSelect(mytarget[mytarget.selectedIndex].text);
-              }}
-            >
-              <option value="">select your area...</option>
-              <option value="kreuzberg">Kreuzberg</option>
-              <option value="mitte">Mitte</option>
-              <option value="neukoelln">Prenzlauer Berg</option>
-              <option value="schoeneberg">Schöneberg</option>
-            </select>
+            <div className="box">
+              <select
+                className="hood-select"
+                name="hood"
+                placeholder="pick your favorite hood..."
+                onChange={e => {
+                  let mytarget = e.target;
+                  this.onSelect(mytarget[mytarget.selectedIndex].value);
+                }}
+              >
+                <option value="">select your hood...</option>
+                <option value="xberg">Kreuzberg</option>
+                <option value="mitte">Mitte</option>
+                <option value="pberg">Prenzlauer Berg</option>
+                <option value="sberg">Schöneberg</option>
+                <option value="nkoelln">Neukölln</option>
+              </select>
+            </div>
             <span className="focus-border" />
           </div>
           <div className="input-field">
@@ -95,7 +98,7 @@ class Registration extends React.Component {
               name="email"
               className="effect"
               type="text"
-              placeholder="Email address"
+              placeholder="email"
               autoComplete="off"
               value={this.state.email}
             />
@@ -107,7 +110,7 @@ class Registration extends React.Component {
               name="password"
               className="effect"
               type="password"
-              placeholder="Password"
+              placeholder="password"
               autoComplete="off"
               value={this.state.password}
             />
