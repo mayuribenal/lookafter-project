@@ -109,7 +109,6 @@ app.get('/members', async (req, res) => {
 app.post('/profile', function(req, res) {
   db.setBio(req.body.bio, req.session.userId)
     .then(() => {
-      // console.log('PROFILEEEE!!!');
       res.json({ success: true });
     })
     .catch(err => {
