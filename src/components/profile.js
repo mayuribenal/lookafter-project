@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { setUploaderVisible } from './actions';
 import moment from 'moment';
 import Uploader from './uploader';
+import BioEditor from './bioeditor';
 
 class Profile extends React.Component {
   render() {
@@ -58,6 +59,7 @@ class Profile extends React.Component {
           <div className="profile-info">
             <div className="profilepic-container">
               <div className="profilepic-uploader">
+                <h2 className="capitalize">welcome, {user.first}!</h2>
                 <img
                   className="profilepic"
                   src={user.pic || 'user.png'}
@@ -66,7 +68,7 @@ class Profile extends React.Component {
                 {uploaderVisible && <Uploader />}
               </div>
             </div>
-            <h2 className="capitalize">welcome, {user.first}!</h2>
+            <BioEditor />
           </div>
           <div className="userEventsOffer">
             <img src="magnifier-tool.png" className="icon-events" />
@@ -75,6 +77,25 @@ class Profile extends React.Component {
               <span className="capitalize">{user.hood}</span>
             </h2>
             {userEventsOffer}
+          </div>
+        </div>
+        <div className="setbio">
+          <h1>family members:</h1>
+          <div className="bio-img-container">
+            <div className="bio-animals">
+              <img className="pets" src="pet.png" />
+              <div className="bio-animals-box">
+                <h3>Marley</h3>
+                <p>ba;sldkfja;lskjdf;alskj</p>
+              </div>
+            </div>
+            <div className="bio-animals">
+              <img className="plants" src="plant.png" />
+              <div className="bio-animals-box">
+                <h3>Aloe vera</h3>
+                <p>as;ldkfja;slkdjf;alskjf</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

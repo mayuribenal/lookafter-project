@@ -23,6 +23,21 @@ export default function(state = {}, action) {
       user: { ...state.user, pic: action.pic }
     };
   }
+
+  if (action.type == 'SET_BIO_EDITOR') {
+    state = {
+      ...state,
+      openBioEditor: !state.openBioEditor
+    };
+  }
+
+  if (action.type == 'SET_BIO') {
+    console.log('my set bio action:', action);
+    state = {
+      ...state,
+      user: { ...state.user, bio: action.bio }
+    };
+  }
   if (action.type == 'CHAT_MESSAGES') {
     state = {
       ...state,

@@ -35,7 +35,7 @@ module.exports.verifyPassword = function(email) {
 
 module.exports.getUser = function(id) {
   return db.query(
-    `SELECT id, first, last, hood, email, img FROM users
+    `SELECT id, first, last, hood, email, img, bio FROM users
         WHERE $1 = id`,
     [id]
   );
@@ -118,4 +118,38 @@ module.exports.removeEventNeed = function(id) {
 
 module.exports.getMembers = function() {
   return db.query(`SELECT * FROM users`);
+};
+
+module.exports.getBioImg = function getBioImg(id) {
+  return db.query(
+    `
+      SELECT *
+      FROM bioimg
+      WHERE bioimg_id = $1;`,
+    [id]
+  );
+};
+
+module.exports.addBioImg = function addBioImg(
+  bioimg_id,
+  title,
+  description,
+  url
+) {
+  return db.query(
+    `
+      INSERT INTO bioimg (bioimg_id, title, description, url)
+      VALUES ($1, $2, $3, $4) RETURNING *;`,
+    [bioimg_id, title, description, url]
+  );
+};
+
+exports.setBio = function setBio(bio, id) {
+  return db.query(
+    `
+      UPDATE users
+      SET bio=$1
+      WHERE id=$2;`,
+    [bio, id]
+  );
 };

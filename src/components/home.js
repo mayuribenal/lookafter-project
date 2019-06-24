@@ -30,11 +30,11 @@ class Home extends React.Component {
         </div>
         <h1 className="hoods">home</h1>
         <h3 className="our-members-title">a friend will lookafter you</h3>
-        <div className="members">{this.gethood('manutos')}</div>
+        <div className="members">{this.hood}</div>
         <h3 className="our-members-title">you'll lookafter a friend</h3>
-        <div className="members">{this.gethood('the callbacks')}</div>
+        <div className="members">{this.hood}</div>
         <h3 className="our-members-title">miscellaneous</h3>
-        <div className="members">{this.gethood('promises')}</div>
+        <div className="members">{this.hood}</div>
       </div>
     );
   }

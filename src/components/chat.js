@@ -101,7 +101,7 @@ class Chat extends React.Component {
             </div>
             <div className="text-area">
               <textarea
-                placeholder="Type a message..."
+                placeholder="write here!"
                 onChange={this.handleChange}
                 onKeyPress={this.sendMessage}
                 ref={textarea => (this.textarea = textarea)}

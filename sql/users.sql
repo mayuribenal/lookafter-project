@@ -7,5 +7,7 @@ CREATE TABLE users(
     hood VARCHAR(200) NOT NULL CHECK(last <> ''),
     email VARCHAR(200) UNIQUE NOT NULL CHECK (email <> ''),
     password VARCHAR(200) NOT NULL CHECK(password <> ''),
-    img VARCHAR
+    img VARCHAR,
+    bio VARCHAR,
+    create_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

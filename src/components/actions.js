@@ -22,6 +22,20 @@ export function setProfilePic(pic) {
   };
 }
 
+export function openBioEditor(bio) {
+  return {
+    type: 'SET_BIO_EDITOR',
+    bio
+  };
+}
+
+export function setBio(bio) {
+  return {
+    type: 'SET_BIO',
+    bio
+  };
+}
+
 export async function getMembers() {
   const members = await axios.get('/members');
   return {

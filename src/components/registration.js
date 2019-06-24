@@ -83,11 +83,11 @@ class Registration extends React.Component {
                 }}
               >
                 <option value="">select your hood...</option>
-                <option value="xberg">Kreuzberg</option>
-                <option value="mitte">Mitte</option>
-                <option value="pberg">Prenzlauer Berg</option>
-                <option value="sberg">Schöneberg</option>
-                <option value="nkoelln">Neukölln</option>
+                <option value="Kreuzberg">Kreuzberg</option>
+                <option value="Mitte">Mitte</option>
+                <option value="Prenzlauer Berg">Prenzlauer Berg</option>
+                <option value="Schöneberg">Schöneberg</option>
+                <option value="Neukölln">Neukölln</option>
               </select>
             </div>
             <span className="focus-border" />

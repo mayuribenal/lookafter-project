@@ -18,7 +18,7 @@ class Uploader extends React.Component {
     var formData = new FormData();
     formData.append('file', uploadedFile);
     axios.post('/upload', formData).then(({ data }) => {
-      console.log('UPLOADER DATA:', data);
+      // console.log('UPLOADER DATA:', data);
       this.props.dispatch(setProfilePic(data.pic));
       this.props.dispatch(setUploaderVisible());
     });

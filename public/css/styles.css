@@ -20,6 +20,7 @@ body {
 
 .capitalize {
   text-transform: capitalize;
+  text-align: center;
 }
 
 .link {
@@ -217,11 +218,13 @@ input[type='password'] {
 
 .main {
   height: 100vh;
-  position: relative;
+  /* position: relative; */
   top: -20px;
   right: 0;
   left: 0;
   bottom: 10%;
+  display: flex;
+  flex-direction: column;
 }
 
 #default {
@@ -384,6 +387,51 @@ h3 {
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+.bioeditor {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+.setbio {
+}
+
+.setbio img {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  /* border: 10px solid var(--borders-light-red); */
+  border-radius: 20px;
+  object-fit: cover;
+}
+.setbio h1 {
+  text-align: center;
+}
+
+.bio-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--borders-grayish-cyan);
+}
+
+.bio-img p {
+}
+
+.pets {
+  border-radius: 20px;
+}
+
+.bio-animals {
+  display: flex;
+  flex-direction: row;
+}
+
+.bio-animals-box {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--borders-grayish-cyan);
 }
 
 /* CHAT */

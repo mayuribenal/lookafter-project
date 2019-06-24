@@ -87,7 +87,8 @@ app.get('/user', async (req, res) => {
       last: user.rows[0].last,
       hood: user.rows[0].hood,
       email: user.rows[0].email,
-      pic: user.rows[0].img
+      pic: user.rows[0].img,
+      bio: user.rows[0].bio
     });
   } catch (err) {
     console.log(err);
@@ -102,6 +103,20 @@ app.get('/members', async (req, res) => {
     console.log(err);
   }
 });
+
+//PROFILE
+
+app.post('/profile', function(req, res) {
+  db.setBio(req.body.bio, req.session.userId)
+    .then(() => {
+      // console.log('PROFILEEEE!!!');
+      res.json({ success: true });
+    })
+    .catch(err => {
+      console.log('error with profile route: ', err);
+      // res.json({ error: true });
+    });
+}); //end of user route
 
 // POST PICTURE
 
