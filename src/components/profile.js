@@ -50,7 +50,7 @@ class Profile extends React.Component {
             <div className="event-title">
               <img src="heart.png" className="icon-events" />
               <h2>
-                you lookafter need in{' '}
+                your lookafter need in{' '}
                 <span className="capitalize">{user.hood}</span>
               </h2>
             </div>
@@ -81,19 +81,20 @@ class Profile extends React.Component {
         </div>
         <div className="setbio">
           <h1>family members:</h1>
+          <button className="add-member">+ add member</button>
           <div className="bio-img-container">
             <div className="bio-animals">
               <img className="pets" src="pet.png" />
               <div className="bio-animals-box">
                 <h3>Marley</h3>
-                <p>ba;sldkfja;lskjdf;alskj</p>
+                <p>he eats 2x per day and loves to play</p>
               </div>
             </div>
             <div className="bio-animals">
               <img className="plants" src="plant.png" />
               <div className="bio-animals-box">
                 <h3>Aloe vera</h3>
-                <p>as;ldkfja;slkdjf;alskjf</p>
+                <p>needs water 3x per week. aprox 150ml</p>
               </div>
             </div>
           </div>

@@ -212,6 +212,7 @@ input[type='password'] {
 .nav-items logo {
   height: 60px;
   width: 60px;
+  object-fit: cover;
 }
 
 /* COMMON STUFF */
@@ -300,7 +301,7 @@ label {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
+  align-self: flex-end;
 }
 
 .profile-info h2 {
@@ -407,6 +408,7 @@ h3 {
 }
 .setbio h1 {
   text-align: center;
+  margin: 0 auto;
 }
 
 .bio-img-container {
@@ -414,6 +416,8 @@ h3 {
   flex-direction: row;
   justify-content: space-evenly;
   background-color: var(--borders-grayish-cyan);
+  height: 40vh;
+  align-items: center;
 }
 
 .bio-img p {
@@ -431,7 +435,14 @@ h3 {
 .bio-animals-box {
   display: flex;
   flex-direction: column;
-  background-color: var(--borders-grayish-cyan);
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+}
+
+button .add-member {
+  align-self: center;
 }
 
 /* CHAT */
