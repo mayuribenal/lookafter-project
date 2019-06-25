@@ -45,7 +45,7 @@ class CalendarOffer extends React.Component {
       <div className="main">
         <div className="calendar-main">
           <h1>
-            your <img src="./400bw.png" width="150px" /> offer
+            your <img src="./400bw.png" width="150px" /> support
           </h1>
           <div className="calendar">
             <BigCalendar
@@ -63,8 +63,8 @@ class CalendarOffer extends React.Component {
               components={{ toolbar: CustomToolbar }}
               eventPropGetter={event => {
                 let newStyle = {
-                  backgroundColor: 'lightgrey',
-                  color: 'black',
+                  backgroundColor: '#5f7e7e',
+                  color: 'white',
                   border: 'none'
                 };
                 if (event.hood == 'the callbacks') {

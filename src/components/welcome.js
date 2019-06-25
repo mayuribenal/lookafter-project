@@ -10,6 +10,9 @@ const Welcome = () => {
       <Fade left>
         <img id="logofront" src="./400bw.png" />
       </Fade>
+      <Fade top>
+        <h1>Sometime. Somehow.</h1>
+      </Fade>
 
       <HashRouter>
         <div>

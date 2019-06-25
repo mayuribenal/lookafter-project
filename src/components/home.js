@@ -14,7 +14,6 @@ class Home extends React.Component {
           <div className="home-box-w ">
             <div className="home-w">
               <div className="about">
-                <img src="push-pin.png" />
                 <h3 className="home-title">about us</h3>
               </div>
               <p>
@@ -24,11 +23,8 @@ class Home extends React.Component {
                 and healthier atmosphere and spread that to those around us.{' '}
               </p>
             </div>
-          </div>
-          <div className="home-box-x">
             <div className="home-x">
               <div className="mission">
-                <img src="target.png" />
                 <h3 className="home-title">our mission</h3>
               </div>
               <p>
@@ -48,15 +44,16 @@ class Home extends React.Component {
                 <strong>registration</strong>
               </p>
               <img src="writing.png" />
+              <p>input your information and select your neighborhood</p>
             </div>
             <div className="home-a">
               <div className="step-two">
                 <h3 className="home-title">step 2</h3>
               </div>
-              <img src="user.png" />
               <p>
                 <strong>add bio</strong>
               </p>
+              <img src="user.png" />
               <p>
                 add your bio and your family member(s) in your profile(make sure
                 to include all the important instructions)
@@ -68,9 +65,9 @@ class Home extends React.Component {
               <div className="step-two">
                 <h3 className="home-title">step 3</h3>
               </div>
-              <img src="calendarneed.png" />
+              <img src="calendaroffer.png" />
               <p>
-                <strong>your need</strong>
+                <strong>your request</strong>
               </p>
               <p>
                 select the date and time that you need a member to look after
@@ -79,11 +76,11 @@ class Home extends React.Component {
             </div>
             <div className="home-a">
               <div className="step-two">
-                <h3 className="home-title">step 3</h3>
+                <h3 className="home-title">step 4</h3>
               </div>
               <img src="calendaroffer.png" />
               <p>
-                <strong>your support</strong>
+                <strong>your commitment</strong>
               </p>
               <p>
                 select the date and time that suits you to support a member by
@@ -95,10 +92,13 @@ class Home extends React.Component {
           <div className="home-box-m">
             <div className="home-m">
               <div className="match">
-                <h3 className="home-title-m">step 4</h3>
+                <h3 className="home-title-m">step 5</h3>
               </div>
               <img src="handshake.png" />
-              <p>in case there is a match: communicate and organize to meet</p>
+              <p>
+                <strong>it's a match!</strong>
+              </p>
+              <p>communicate and organize to meet</p>
             </div>
           </div>
           <div className="home-box-i">
@@ -109,8 +109,8 @@ class Home extends React.Component {
               </div>
               <p>
                 we highly encourage people to meet each other face to face. Real
-                time communication and a short introduction to the pets and
-                plants are extremely helpful for a smooth community support. The
+                communication and a short introduction to the pets and plants
+                are extremely helpful for a smooth community support. The
                 location is probably just around the corner from you
               </p>
             </div>

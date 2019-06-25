@@ -63,8 +63,8 @@ class CalendarNeed extends React.Component {
               components={{ toolbar: CustomToolbar }}
               eventPropGetter={event => {
                 let newStyle = {
-                  backgroundColor: 'lightgrey',
-                  color: 'black',
+                  backgroundColor: '#ff6979',
+                  color: 'white',
                   border: 'none'
                 };
                 if (event.hood == 'the callbacks') {

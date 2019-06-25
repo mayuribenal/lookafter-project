@@ -17,6 +17,8 @@ body {
   overflow-x: hidden;
   padding-top: 11vh;
   background: var(--borders-verypale-red: #ffeee9);
+  margin: 0;
+  padding: 0;
 }
 
 .capitalize {
@@ -78,6 +80,11 @@ button:active {
 
 } */
 
+.welcome-top {
+  width: 100vw;
+
+  background: #ffc7b6;
+}
 .welcome {
   display: flex;
   flex-direction: column;
@@ -594,6 +601,8 @@ textarea {
   align-items: center;
   justify-content: center;
   background: var(--main-pale-red);
+  position: relative;
+  top: 10vh;
 }
 
 .calendar-main h1 {
@@ -776,7 +785,7 @@ button:active {
   background: var(--borders-verypale-red);
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  align-items: center;
 }
 .home-w {
   display: flex;
@@ -800,16 +809,10 @@ button:active {
   display: flex;
   flex-direction: row;
 }
-.home-box-x {
-  height: 40vh;
-  background: var(--borders-verypale-red);
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-}
+
 .home-x {
   display: flex;
-  height: 20vh;
+  height: 25vh;
   width: 40vw;
   background: var(--borders-grayish-cyan);
   border-radius: 20px;
@@ -834,12 +837,12 @@ button:active {
   background: var(--borders-grayish-cyan);
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .home-y {
   display: flex;
   height: 25vh;
-  width: 10vw;
+  width: 20vw;
   background: var(--borders-verypale-red);
   border-radius: 20px;
   flex-direction: column;
@@ -851,9 +854,8 @@ button:active {
   align-self: center;
 }
 .home-y p {
-  margin-left: 20px;
-  margin-right: 20px;
   text-align: center;
+  margin: 10px 5px 0 5px;
 }
 .step-one {
   display: flex;
@@ -929,7 +931,7 @@ button:active {
 .home-m {
   display: flex;
   height: 25vh;
-  width: 25vw;
+  width: 18vw;
   background: var(--borders-verypale-red);
   border-radius: 20px;
   flex-direction: column;
@@ -944,6 +946,7 @@ button:active {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
+  margin: 10px 0 0 0;
 }
 .match {
   display: flex;
@@ -954,6 +957,7 @@ button:active {
   text-align: center;
   font-size: 28px;
   color: white;
+  margin: 5px;
 }
 
 .home-box-i {
@@ -965,32 +969,35 @@ button:active {
 }
 .home-i {
   display: flex;
-  height: 25vh;
-  width: 40vw;
+  height: 30vh;
+  width: 20vw;
   background: var(--borders-light-red);
   border-radius: 20px;
   flex-direction: column;
-  margin: 20px 40px;
+  margin: 10px 20px;
   color: white;
 }
 .home-i img {
   width: 30px;
   height: 30px;
+  margin: 5px;
 }
 .home-i p {
-  margin-left: 20px;
-  margin-right: 20px;
   text-align: center;
+  margin: 2px;
 }
 .important {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .home {
   font-size: 45px;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
+  color: var(--main-dark-grayish);
 }
 .how-it-works {
   font-size: 45px;
