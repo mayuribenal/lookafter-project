@@ -48,14 +48,20 @@ class Popover extends React.Component {
               From {moment(this.props.eventInfo.start).format('HH:mm')} to{' '}
               {moment(this.props.eventInfo.end).format('HH:mm')}
             </p>
-            <button
-              className="event-button"
-              onClick={() =>
-                this.remove(this.props.eventInfo.id, this.props.eventInfo.hood)
-              }
-            >
-              remove
-            </button>
+            <div className="popover-section">
+              <button
+                className="event-button"
+                onClick={() =>
+                  this.remove(
+                    this.props.eventInfo.id,
+                    this.props.eventInfo.hood
+                  )
+                }
+              >
+                <img src="delete.png" width="25px" height="25px" />
+              </button>
+              <img src="writing.png" width="25px" height="25px" />
+            </div>
             {this.state.error && (
               <p className="error">sorry, you cannot remove this.</p>
             )}

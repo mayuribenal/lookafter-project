@@ -772,12 +772,24 @@ button:active {
 }
 
 .event-info {
-  padding: 50px 0 20px 40px;
+  padding: 50px;
+  width: 50%;
 }
 
 .event-info h3 {
   text-decoration: underline;
   margin-bottom: 40px;
+}
+
+.popover-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.popover-section img {
+  cursor: pointer;
 }
 
 /* HOME */
