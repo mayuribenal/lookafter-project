@@ -14,11 +14,12 @@ class Uploader extends React.Component {
   }
   uploadFile() {
     var file = document.getElementById('file');
+    console.log('MY FILE', file);
     var uploadedFile = file.files[0];
     var formData = new FormData();
     formData.append('file', uploadedFile);
     axios.post('/upload', formData).then(({ data }) => {
-      // console.log('UPLOADER DATA:', data);
+      console.log('UPLOADER DATA:', data);
       this.props.dispatch(setProfilePic(data.pic));
       this.props.dispatch(setUploaderVisible());
     });
@@ -31,7 +32,9 @@ class Uploader extends React.Component {
   render() {
     return (
       <div
-        onClick={() => this.props.dispatch(setUploaderVisible())}
+        onClick={() => {
+          console.log('nothing');
+        }}
         className="uploader"
       >
         <input
@@ -41,7 +44,13 @@ class Uploader extends React.Component {
           accept="image/*"
         />
         <label htmlFor="file">{this.state.fileName}</label>
-        <button onClick={this.uploadFile}>upload</button>
+        <button
+          onClick={() => {
+            this.uploadFile();
+          }}
+        >
+          upload
+        </button>
       </div>
     );
   }

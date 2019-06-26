@@ -45,6 +45,7 @@
         "react-big-calendar": "^0.20.3",
         "react-dom": "^16.2.0",
         "react-dropdown-timepicker": "^1.0.4",
+        "react-rating": "^1.7.2",
         "react-redux": "^5.0.5",
         "react-reveal": "^1.2.2",
         "react-router": "^4.2.0",

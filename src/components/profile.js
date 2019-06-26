@@ -5,6 +5,8 @@ import moment from 'moment';
 import Uploader from './uploader';
 import BioEditor from './bioeditor';
 
+var Rating = require('react-rating');
+
 class Profile extends React.Component {
   render() {
     const {
@@ -67,6 +69,18 @@ class Profile extends React.Component {
                 {uploaderVisible && <Uploader />}
               </div>
             </div>
+            <Rating
+              placeholderRating={3.5}
+              emptySymbol={
+                <img src="assets/images/star-grey.png" className="icon" />
+              }
+              placeholderSymbol={
+                <img src="assets/images/star-red.png" className="icon" />
+              }
+              fullSymbol={
+                <img src="assets/images/star-yellow.png" className="icon" />
+              }
+            />
             <BioEditor />
           </div>
           <div className="userEventsOffer">

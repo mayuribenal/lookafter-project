@@ -122,6 +122,7 @@ app.post('/profile', function(req, res) {
 
 app.post('/upload', uploader.single('file'), s3.upload, async (req, res) => {
   try {
+    console.log('SOMETHING!!');
     const pic = await db.addProfilePic(
       config.s3Url + req.file.filename,
       req.session.userId
