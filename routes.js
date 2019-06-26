@@ -63,7 +63,8 @@ app.post('/login', async (req, res) => {
     const bool = await bcrypt.compare(req.body.password, pass.rows[0].password);
     if (bool == true) {
       req.session.userId = pass.rows[0].id;
-      // req.session.hood = data.rows[0].hood;
+      req.session.hood = pass.rows[0].hood;
+      // console.log('my hood', req.session);
       res.json({
         success: true
       });

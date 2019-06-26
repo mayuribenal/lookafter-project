@@ -27,7 +27,7 @@ module.exports.registerUser = function(first, last, hood, email, password) {
 
 module.exports.verifyPassword = function(email) {
   return db.query(
-    `SELECT id, password FROM users
+    `SELECT id, password, hood FROM users
         WHERE $1 = email`,
     [email]
   );
@@ -88,19 +88,23 @@ module.exports.addEventOffer = function(id, hood, name, start, end) {
   );
 };
 
-module.exports.getEventsOffer = function() {
+module.exports.getEventsOffer = function(hood) {
   return db.query(
     `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
         FROM calendar_offer
-        ORDER BY event_start ASC`
+        WHERE hood = $1
+        ORDER BY event_start ASC`,
+    [hood.toLowerCase()]
   );
 };
 
-module.exports.getEventsNeed = function() {
+module.exports.getEventsNeed = function(hood) {
   return db.query(
     `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
         FROM calendar_need
-        ORDER BY event_start ASC`
+        WHERE hood = $1
+        ORDER BY event_start ASC`,
+    [hood.toLowerCase()]
   );
 };
 

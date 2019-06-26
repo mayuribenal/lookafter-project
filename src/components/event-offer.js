@@ -66,7 +66,7 @@ class Event extends React.Component {
               name="event"
               className="effect"
               type="text"
-              placeholder="Add title and time..."
+              placeholder="title"
             />
           </div>
           <div className="time-picker-container">
@@ -92,7 +92,7 @@ class Event extends React.Component {
             <div className="calendar-container">
               <img className="calendar-icon" src="calendar.png" />
               <button className="event-button" onClick={this.bookEvent}>
-                reserve dates
+                reserve
               </button>
               {this.state.notAllowed && (
                 <div className="error">

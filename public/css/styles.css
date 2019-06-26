@@ -345,7 +345,9 @@ label {
   flex-direction: row;
   align-items: center;
   margin: 15px;
-  overflow: scroll;
+  /* overflow: scroll; */
+  position: relative;
+  top: 10vh;
 }
 .userEventsNeed {
   width: 40%;
@@ -355,6 +357,7 @@ label {
   overflow: scroll;
   align-self: flex-start;
   height: 50vh;
+  scrollbar-width: none;
 }
 
 .userEventsOffer {
@@ -365,6 +368,7 @@ label {
   overflow: scroll;
   align-self: flex-start;
   height: 50vh;
+  scrollbar-width: none;
 }
 
 .event-title {
@@ -404,6 +408,8 @@ h3 {
 }
 ::-webkit-scrollbar {
   display: none;
+  width: 0px;
+  background: transparent;
 }
 
 .bioeditor {
@@ -412,6 +418,8 @@ h3 {
   align-items: center;
 }
 .setbio {
+  position: relative;
+  top: 20vh;
 }
 
 .setbio img {
@@ -425,6 +433,8 @@ h3 {
 .setbio h1 {
   text-align: center;
   margin: 0 auto;
+  color: var(--borders-light-red);
+  padding: 20px;
 }
 
 .bio-img-container {
@@ -436,7 +446,16 @@ h3 {
   align-items: center;
 }
 
-.bio-img p {
+.family-bio {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+  background: var(--borders-grayish-cyan);
+  justify-content: space-around;
+}
+.family-bio button {
+  align-self: center;
 }
 
 .pets {
@@ -644,6 +663,7 @@ textarea {
   width: 500px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .event-scheduler #event-input {
@@ -759,16 +779,6 @@ button:active {
 
 /* HOME */
 
-/* .home-top {
-  height: 70%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  background-image: url('/kit.jpg');
-  background-size: cover;
-  top: 10%;
-} */
-
 .home-welcome {
   width: 70%;
   padding-left: 20px;
@@ -778,6 +788,7 @@ button:active {
   text-align: center;
   font-size: 28px;
   color: var(--borders-light-red);
+  margin: 15px;
 }
 
 .home-box-w {
@@ -786,6 +797,7 @@ button:active {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 .home-w {
   display: flex;
@@ -795,6 +807,8 @@ button:active {
   border-radius: 20px;
   flex-direction: column;
   margin: 20px 40px;
+  justify-content: center;
+  align-items: center;
 }
 .home-w img {
   width: 30px;
@@ -818,6 +832,8 @@ button:active {
   border-radius: 20px;
   flex-direction: column;
   margin: 20px 40px;
+  justify-content: center;
+  align-items: center;
 }
 .home-x img {
   width: 30px;
@@ -841,7 +857,7 @@ button:active {
 }
 .home-y {
   display: flex;
-  height: 25vh;
+  height: 35vh;
   width: 20vw;
   background: var(--borders-verypale-red);
   border-radius: 20px;
@@ -849,42 +865,54 @@ button:active {
   margin: 20px 40px;
 }
 .home-y img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   align-self: center;
 }
 .home-y p {
   text-align: center;
-  margin: 10px 5px 0 5px;
-}
-.step-one {
-  display: flex;
-  flex-direction: row;
+  margin: 10px;
 }
 
 .home-a {
   display: flex;
-  height: 25vh;
+  height: 35vh;
   width: 20vw;
   background: var(--borders-verypale-red);
   border-radius: 20px;
   flex-direction: column;
   margin: 20px 40px;
 }
+.home-b {
+  display: flex;
+  height: 35vh;
+  width: 20vw;
+  background: var(--borders-verypale-red);
+  border-radius: 20px;
+  flex-direction: column;
+  margin: 20px 40px;
+}
+.home-b img {
+  width: 40px;
+  height: 40px;
+  align-self: center;
+}
 .home-a img {
   width: 40px;
   height: 40px;
   align-self: center;
 }
+.home-b p {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+  margin: 10px;
+}
 .home-a p {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
-  margin: 10px 0 0 0;
-}
-.step-two {
-  display: flex;
-  flex-direction: row;
+  margin: 10px;
 }
 
 .home-box-z {
@@ -896,7 +924,7 @@ button:active {
 }
 .home-z {
   display: flex;
-  height: 25vh;
+  height: 35vh;
   width: 20vw;
   background: var(--borders-verypale-red);
   border-radius: 20px;
@@ -912,7 +940,7 @@ button:active {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
-  margin: 10px 0 0 0;
+  margin: 10px;
 }
 
 .home-title-m {
@@ -930,7 +958,7 @@ button:active {
 }
 .home-m {
   display: flex;
-  height: 25vh;
+  height: 35vh;
   width: 18vw;
   background: var(--borders-verypale-red);
   border-radius: 20px;
@@ -946,7 +974,7 @@ button:active {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
-  margin: 10px 0 0 0;
+  margin: 10px;
 }
 .match {
   display: flex;
@@ -960,22 +988,19 @@ button:active {
   margin: 5px;
 }
 
-.home-box-i {
-  height: 40vh;
-  background: var(--borders-grayish-cyan);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 .home-i {
   display: flex;
-  height: 30vh;
+  height: 40vh;
   width: 20vw;
   background: var(--borders-light-red);
   border-radius: 20px;
   flex-direction: column;
-  margin: 10px 20px;
+  margin: 0;
   color: white;
+  position: fixed;
+  justify-content: center;
+  right: 15px;
+  bottom: 10px;
 }
 .home-i img {
   width: 30px;
@@ -984,7 +1009,7 @@ button:active {
 }
 .home-i p {
   text-align: center;
-  margin: 2px;
+  margin: 10px;
 }
 .important {
   display: flex;
@@ -1006,4 +1031,5 @@ button:active {
   background: var(--borders-grayish-cyan);
   color: var(--borders-light-red);
   margin: 0 auto;
+  padding: 20px;
 }

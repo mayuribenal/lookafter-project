@@ -45,7 +45,7 @@ class CalendarOffer extends React.Component {
       <div className="main">
         <div className="calendar-main">
           <h1>
-            your <img src="./400bw.png" width="150px" /> support
+            your <img src="./400bw.png" width="150px" /> commitments
           </h1>
           <div className="calendar">
             <BigCalendar

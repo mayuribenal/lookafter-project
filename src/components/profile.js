@@ -22,11 +22,11 @@ class Profile extends React.Component {
       .map(ev => {
         return (
           <div className="schedule-container-need" key={ev.id}>
-            <h3>{ev.title}</h3>
-            <p>
-              from {moment(ev.start).format('D MMM YYYY')} to{' '}
+            <h3>
+              {moment(ev.start).format('D MMM YYYY')} to{' '}
               {moment(ev.end).format('D MMM YYYY')}
-            </p>
+            </h3>
+            <p>{ev.title}</p>
           </div>
         );
       });
@@ -35,11 +35,11 @@ class Profile extends React.Component {
       .map(ev => {
         return (
           <div className="schedule-container-offer " key={ev.id}>
-            <h3>{ev.title}</h3>
-            <p>
-              from {moment(ev.start).format('D MMM YYYY')} to{' '}
+            <h3>
+              {moment(ev.start).format('D MMM YYYY')} to{' '}
               {moment(ev.end).format('D MMM YYYY')}
-            </p>
+            </h3>
+            <p>{ev.title}</p>
           </div>
         );
       });
@@ -50,8 +50,7 @@ class Profile extends React.Component {
             <div className="event-title">
               <img src="heart.png" className="icon-events" />
               <h2>
-                your lookafter need in{' '}
-                <span className="capitalize">{user.hood}</span>
+                your needs in <span className="capitalize">{user.hood}</span>
               </h2>
             </div>
             {userEventsNeed}
@@ -73,15 +72,17 @@ class Profile extends React.Component {
           <div className="userEventsOffer">
             <img src="magnifier-tool.png" className="icon-events" />
             <h2>
-              your lookafter support in{' '}
+              your commitments in{' '}
               <span className="capitalize">{user.hood}</span>
             </h2>
             {userEventsOffer}
           </div>
         </div>
         <div className="setbio">
-          <h1>family members:</h1>
-          <button className="add-member">+ add member</button>
+          <div className="family-bio">
+            <h1>family members:</h1>
+            <button className="add-member">+ add member</button>
+          </div>
           <div className="bio-img-container">
             <div className="bio-animals">
               <img className="pets" src="pet.png" />
