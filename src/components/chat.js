@@ -100,17 +100,18 @@ class Chat extends React.Component {
               {chatMessages}
             </div>
             <div className="text-area">
+              <img src="clipper.png" width="40px" height="40px" />
               <textarea
                 placeholder="write here!"
                 onChange={this.handleChange}
                 onKeyPress={this.sendMessage}
                 ref={textarea => (this.textarea = textarea)}
               />
+              <img src="mic.png" width="40px" height="40px" />
             </div>
           </div>
           <div className="chat-side">
             <div className="profiles">{chatMembers}</div>
-            <div className="profiles-end" />
           </div>
         </div>
       </div>

@@ -47,7 +47,7 @@ io.on('connection', function(socket) {
   //   return socket.disconnect(true);
   //}
 
-  db.getChat().then(({ rows }) => {
+  db.getChat(socket.request.session.hood).then(({ rows }) => {
     socket.emit('chatMessages', {
       messages: rows.reverse()
     });

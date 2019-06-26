@@ -490,7 +490,7 @@ button .add-member {
 }
 
 .chat-side {
-  width: 25%;
+  width: 20vw;
   height: 100vh;
   border-left: 1px solid rgb(168, 203, 209);
 }
@@ -502,13 +502,14 @@ button .add-member {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  scrollbar-width: none;
 }
 
-.profiles-end {
+/* .profiles-end {
   width: 100%;
   height: 10%;
   background-color: var(--main-pale-red);
-}
+} */
 
 .profiles img {
   height: 50px;
@@ -519,13 +520,13 @@ button .add-member {
 
 .chat-member {
   display: flex;
-  padding: 10px;
+  padding: 6px;
 }
 
 .chat-member p {
   display: inline-block;
   padding-left: 10px;
-  color: var(--borders-light-red);
+  color: var(--main-dark-grayish);
   font-weight: bold;
 }
 
@@ -540,11 +541,12 @@ button .add-member {
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .chat-room {
   height: 90vh;
-  width: 75%;
+  width: 80vw;
 }
 
 .chat {
@@ -552,6 +554,7 @@ button .add-member {
   overflow-y: auto;
   border-left: 1px solid rgb(231, 231, 231);
   background: white;
+  scrollbar-width: none;
 }
 
 .chatMessage-container {
@@ -595,10 +598,10 @@ p.words {
 
 .text-area {
   height: 10vh;
-  background: var(--main-pale-red);
+  background: var(--borders-light-red);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 textarea {
