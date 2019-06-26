@@ -50,6 +50,7 @@
         "react-reveal": "^1.2.2",
         "react-router": "^4.2.0",
         "react-router-dom": "^4.2.2",
+        "react-star-rating": "^1.4.2",
         "react-test-renderer": "^16.6.0",
         "react-tiny-popover": "^3.4.2",
         "redux": "^3.7.1",

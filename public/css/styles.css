@@ -74,12 +74,6 @@ button:active {
   align-self: center;
 }
 
-/* .welcome {
-  width: 100vw;
-  height: 100vh;
-
-} */
-
 .welcome-top {
   width: 100vw;
 
@@ -87,9 +81,29 @@ button:active {
 }
 .welcome {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 0 auto;
   background: #ffc7b6;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg-log {
+  height: 50vh;
+  width: 50vw;
+  position: relative;
+  top: 15%;
+}
+
+.logo-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
+  margin-left: 100px;
 }
 
 .register,
@@ -224,10 +238,17 @@ input[type='password'] {
   margin: 0;
 }
 
-.nav-items logo {
-  height: 60px;
-  width: 60px;
+#nav-logo {
+  height: 70px;
+  width: 100px;
   object-fit: cover;
+}
+
+#mypic {
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
 }
 
 /* COMMON STUFF */
@@ -478,6 +499,14 @@ h3 {
 
 button .add-member {
   align-self: center;
+}
+
+.ratings {
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  width: 20vw;
+  height: 20vh;
 }
 
 /* CHAT */
@@ -794,11 +823,6 @@ button:active {
 
 /* HOME */
 
-.home-welcome {
-  width: 70%;
-  padding-left: 20px;
-  font-size: 20px;
-}
 .home-title {
   text-align: center;
   font-size: 28px;

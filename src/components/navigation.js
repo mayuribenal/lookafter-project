@@ -22,8 +22,8 @@ class Navigation extends React.Component {
       <div className="navigation">
         <div className="nav-section">
           <Link to="/home" className="link">
-            <div className="nav-items logo">
-              <img src="50bw.png" />
+            <div className="nav-items">
+              <img id="nav-logo" src="400bw.png" />
             </div>
           </Link>
         </div>
@@ -35,9 +35,13 @@ class Navigation extends React.Component {
             </div>
           </Link>
         </div>
+
         <div className="nav-section">
-          <Link to="/profile" className="link">
-            <img src="user.png" />
+          <Link to="/chat" className="link">
+            <div className="nav-items">
+              <img src="chats.png" />
+              <p>chat</p>
+            </div>
           </Link>
         </div>
         <div className="nav-section">
@@ -48,18 +52,18 @@ class Navigation extends React.Component {
             </div>
           </Link>
         </div>
-        <div className="nav-section">
-          <Link to="/chat" className="link">
-            <div className="nav-items">
-              <img src="chats.png" />
-              <p>chat</p>
-            </div>
-          </Link>
-        </div>
+
         <div className="nav-section" onClick={this.logout}>
           <div className="nav-items">
             <img src="logout.png" />
             <p>log out</p>
+          </div>
+        </div>
+        <div className="nav-section">
+          <div className="nav-items">
+            <Link to="/profile" className="link">
+              <img id="mypic" src={user.pic || 'user.png'} />
+            </Link>
           </div>
         </div>
       </div>

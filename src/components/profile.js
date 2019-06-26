@@ -69,22 +69,11 @@ class Profile extends React.Component {
                 {uploaderVisible && <Uploader />}
               </div>
             </div>
-            <Rating
-              placeholderRating={3.5}
-              emptySymbol={
-                <img src="assets/images/star-grey.png" className="icon" />
-              }
-              placeholderSymbol={
-                <img src="assets/images/star-red.png" className="icon" />
-              }
-              fullSymbol={
-                <img src="assets/images/star-yellow.png" className="icon" />
-              }
-            />
+            <div className="ratings" />
             <BioEditor />
           </div>
           <div className="userEventsOffer">
-            <img src="magnifier-tool.png" className="icon-events" />
+            <img src="heart.png" className="icon-events" />
             <h2>
               your commitments in{' '}
               <span className="capitalize">{user.hood}</span>
