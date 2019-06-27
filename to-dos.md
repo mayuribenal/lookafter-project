@@ -7,7 +7,11 @@ style
 6. margin login
 
 bugs
+profile
 
-1. profile.js -> duplicated dates from calendar.
-2. filter users by group from the beginning
-3. upload profile picture
+1. dates displaying are from every user from the hood
+2. when uploading a profile picture I get an error 'cannot read property 'id' of undefined, and once refreshing the page the picture loads.
+3. cannot close modal
+4. chat is not filtering the hood
+
+-

@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from './axios';
-import { setBio, openBioEditor } from './actions';
+import { setFamilyBio, openFamilyBioEditor } from './actions';
 import { connect } from 'react-redux';
 
-class BioImg extends React.Component {
+class BioFamily extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,7 +13,7 @@ class BioImg extends React.Component {
 
   handleInput({ target }) {
     this.setState({
-      bio: target.value
+      familybio: target.value
     });
   }
 
@@ -24,48 +24,49 @@ class BioImg extends React.Component {
   }
 
   submit() {
-    console.log('my setBio', setBio);
     axios
-      .post('/profile', { bio: this.state.bio })
+      .post('/profile-family', { familybio: this.state.description })
       .then(results => {
         console.log('MY PROF RESULTS', results);
-        this.props.dispatch(setBio(this.state.bio));
-        this.props.dispatch(openBioEditor());
+        this.props.dispatch(setFamilyBio(this.state.description));
+        this.props.dispatch(openFamilyBioEditor());
       })
       .catch(err => {
-        console.log('profile bioeditor ', err);
+        console.log('profile family bioeditor ', err);
       });
   }
 
   render() {
     return (
       <div>
-        {this.props.bio && !this.props.openBioEditor && (
+        {this.props.description && !this.props.openFamilyBioEditor && (
           <div className="bioeditor">
-            <div className="props-box">{this.props.bio}</div>
+            <div className="props-box">{this.props.description}</div>
             <div>
-              <button onClick={() => this.props.dispatch(openBioEditor())}>
+              <button
+                onClick={() => this.props.dispatch(openFamilyBioEditor())}
+              >
                 edit
               </button>
             </div>
           </div>
         )}
-        {!this.props.bio && !this.props.openBioEditor && (
+        {!this.props.description && !this.props.openFamilyBioEditor && (
           <div>
-            <button onClick={() => this.props.dispatch(openBioEditor())}>
+            <button onClick={() => this.props.dispatch(openFamilyBioEditor())}>
               {' '}
-              add bio
+              add description
             </button>
           </div>
         )}
-        {this.props.openBioEditor && (
+        {this.props.openFamilyBioEditor && (
           <div className="bioeditor">
             <div>
-              <p>your bio:</p>
+              <p>your family member description:</p>
             </div>
             <div className="props-box">
               <textarea
-                defaultValue={this.props.bio}
+                defaultValue={this.props.description}
                 onChange={this.handleInput}
               />
             </div>
@@ -83,11 +84,11 @@ class BioImg extends React.Component {
 
 const mapStateToProps = function(state) {
   return {
-    openBioEditor: state.openBioEditor
+    openFamilyBioEditor: state.openFamilyBioEditor
   };
 };
 
-export default connect(mapStateToProps)(BioImg);
+export default connect(mapStateToProps)(BioFamily);
 
 // this.setState({
 //   bioEditorIsVisible: false

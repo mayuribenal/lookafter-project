@@ -124,27 +124,26 @@ module.exports.getMembers = function() {
   return db.query(`SELECT * FROM users`);
 };
 
-module.exports.getBioImg = function getBioImg(id) {
+module.exports.getBioFamily = function getBioFamily(id) {
   return db.query(
     `
       SELECT *
-      FROM bioimg
+      FROM biofamily
       WHERE bioimg_id = $1;`,
     [id]
   );
 };
 
-module.exports.addBioImg = function addBioImg(
+module.exports.addBioFamily = function addBioFamily(
   bioimg_id,
-  title,
   description,
   url
 ) {
   return db.query(
     `
-      INSERT INTO bioimg (bioimg_id, title, description, url)
-      VALUES ($1, $2, $3, $4) RETURNING *;`,
-    [bioimg_id, title, description, url]
+      INSERT INTO biofamily (bioimg_id, description, url)
+      VALUES ($1, $2, $3) RETURNING *;`,
+    [bioimg_id, description, url]
   );
 };
 
@@ -155,5 +154,15 @@ exports.setBio = function setBio(bio, id) {
       SET bio=$1
       WHERE id=$2;`,
     [bio, id]
+  );
+};
+
+exports.setBioFamily = function setBioFamily(id) {
+  return db.query(
+    `
+    INSERT INTO biofamily (bioimg_id, description)
+    VALUES ($1, $2) RETURNING *
+      `,
+    [id]
   );
 };

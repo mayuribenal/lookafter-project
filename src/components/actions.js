@@ -28,11 +28,23 @@ export function openBioEditor(bio) {
     bio
   };
 }
+export function openFamilyBioEditor(description) {
+  return {
+    type: 'SET_DESCRIPTION_EDITOR',
+    description
+  };
+}
 
 export function setBio(bio) {
   return {
     type: 'SET_BIO',
     bio
+  };
+}
+export function setFamilyBio(description) {
+  return {
+    type: 'SET_FAM_BIO',
+    description
   };
 }
 

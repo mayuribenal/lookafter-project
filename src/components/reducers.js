@@ -31,6 +31,13 @@ export default function(state = {}, action) {
     };
   }
 
+  if (action.type == 'SET_DESCRIPTION_EDITOR') {
+    state = {
+      ...state,
+      openFamilyBioEditor: !state.openFamilyBioEditor
+    };
+  }
+
   if (action.type == 'SET_BIO') {
     console.log('my set bio action:', action);
     state = {

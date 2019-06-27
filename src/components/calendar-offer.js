@@ -67,12 +67,12 @@ class CalendarOffer extends React.Component {
                   color: 'white',
                   border: 'none'
                 };
-                if (event.hood == 'the callbacks') {
+                if (
+                  event.hood &&
+                  event.user_id === this.props.user.hood &&
+                  this.props.user.id
+                ) {
                   newStyle.backgroundColor = 'rgb(153, 230, 153)';
-                } else if (event.hood == 'promises') {
-                  newStyle.backgroundColor = 'rgb(255, 128, 128)';
-                } else if (event.hood == 'manutos') {
-                  newStyle.backgroundColor = 'rgb(255, 236, 128)';
                 }
                 return {
                   className: '',

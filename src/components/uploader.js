@@ -14,12 +14,12 @@ class Uploader extends React.Component {
   }
   uploadFile() {
     var file = document.getElementById('file');
-    console.log('MY FILE', file);
+    // console.log('MY FILE', file);
     var uploadedFile = file.files[0];
     var formData = new FormData();
     formData.append('file', uploadedFile);
     axios.post('/upload', formData).then(({ data }) => {
-      console.log('UPLOADER DATA:', data);
+      // console.log('UPLOADER DATA:', data);
       this.props.dispatch(setProfilePic(data.pic));
       this.props.dispatch(setUploaderVisible());
     });
@@ -29,14 +29,17 @@ class Uploader extends React.Component {
       fileName: e.target.files[0].name
     });
   }
+
+  closeModalHandler(e) {
+    this.setState({
+      setUploaderVisible: false
+    });
+    e.stopPropagation();
+  }
+
   render() {
     return (
-      <div
-        onClick={() => {
-          console.log('nothing');
-        }}
-        className="uploader"
-      >
+      <div className="uploader">
         <input
           id="file"
           type="file"
@@ -63,3 +66,9 @@ const mapStateToProps = function(state) {
 };
 
 export default connect(mapStateToProps)(Uploader);
+
+// onClick={e => {
+//   this.closeModalHandler(e);
+// }}
+
+// this.props.closeModalHandler();

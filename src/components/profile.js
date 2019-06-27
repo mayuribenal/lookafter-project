@@ -4,8 +4,8 @@ import { setUploaderVisible } from './actions';
 import moment from 'moment';
 import Uploader from './uploader';
 import BioEditor from './bioeditor';
-
-var Rating = require('react-rating');
+import BioFamily from './biofamily';
+import Rating from 'react-rating';
 
 class Profile extends React.Component {
   render() {
@@ -15,6 +15,10 @@ class Profile extends React.Component {
       reserveEventsOffer,
       uploaderVisible
     } = this.props;
+    console.log('MY PROFILE PROPS:', this.props);
+    const ratingChanged = newRating => {
+      console.log(newRating);
+    };
     if (!user || !reserveEventsNeed || !reserveEventsOffer) {
       return null;
     }
@@ -47,58 +51,75 @@ class Profile extends React.Component {
       });
     return (
       <div className="main">
-        <div className="userEvents">
-          <div className="userEventsNeed">
-            <div className="event-title">
-              <img src="heart.png" className="icon-events" />
-              <h2>
-                your needs in <span className="capitalize">{user.hood}</span>
-              </h2>
-            </div>
-            {userEventsNeed}
-          </div>
-          <div className="profile-info">
-            <div className="profilepic-container">
-              <div className="profilepic-uploader">
-                <h2 className="capitalize">welcome, {user.first}!</h2>
-                <img
-                  className="profilepic"
-                  src={user.pic || 'user.png'}
-                  onClick={() => this.props.dispatch(setUploaderVisible())}
-                />
-                {uploaderVisible && <Uploader />}
-              </div>
-            </div>
-            <div className="ratings" />
-            <BioEditor />
-          </div>
-          <div className="userEventsOffer">
+        <div className="header-profile">
+          <div className="event-title">
             <img src="heart.png" className="icon-events" />
             <h2>
               your commitments in{' '}
               <span className="capitalize">{user.hood}</span>
             </h2>
-            {userEventsOffer}
+          </div>
+          <h2 className="capitalize">welcome, {user.first}!</h2>
+          <div className="event-title">
+            <img src="heart.png" className="icon-events" />
+            <h2>
+              your requests in <span className="capitalize">{user.hood}</span>
+            </h2>
           </div>
         </div>
-        <div className="setbio">
-          <div className="family-bio">
-            <h1>family members:</h1>
-            <button className="add-member">+ add member</button>
-          </div>
-          <div className="bio-img-container">
-            <div className="bio-animals">
-              <img className="pets" src="pet.png" />
-              <div className="bio-animals-box">
-                <h3>Marley</h3>
-                <p>he eats 2x per day and loves to play</p>
+        <div className="profile-main">
+          <div className="userEvents">
+            <div className="userEventsNeed">{userEventsNeed}</div>
+            <div className="profile-info">
+              <div className="profilepic-container">
+                <div className="profilepic-uploader">
+                  <img
+                    className="profilepic"
+                    src={user.pic || 'user.png'}
+                    onClick={() => this.props.dispatch(setUploaderVisible())}
+                  />
+                  {uploaderVisible && (
+                    <Uploader
+                      closeModalHandler={() =>
+                        this.setState({ setUploaderVisible: false })
+                      }
+                    />
+                  )}
+                </div>
               </div>
+              <div className="ratings">
+                <h3>your ratings:</h3>
+                <Rating initialRating={3} readonly />
+              </div>
+              <BioEditor />
             </div>
-            <div className="bio-animals">
-              <img className="plants" src="plant.png" />
-              <div className="bio-animals-box">
-                <h3>Aloe vera</h3>
-                <p>needs water 3x per week. aprox 150ml</p>
+            <div className="userEventsOffer">{userEventsOffer}</div>
+          </div>
+          <div className="setbio">
+            <div className="family-bio">
+              <h1>family members:</h1>
+              <button className="add-member">+ add member</button>
+            </div>
+            <div className="bio-img-container">
+              <div>
+                <div className="bio-animals">
+                  <img className="pets" src="bulldog.jpg" />
+                  <div className="bio-animals-box" />
+                </div>
+                <BioFamily />
+              </div>
+              <div>
+                <div className="bio-animals">
+                  <img className="plants" src="aloe.jpg" />
+                  <div className="bio-animals-box">
+                    <p>
+                      this is my aloe vera! It only needs water 1x week. feel
+                      free to take the gel from the leaft if you need to relieve
+                      pain from scrapes and burns
+                    </p>
+                  </div>
+                </div>
+                <button>edit</button>
               </div>
             </div>
           </div>

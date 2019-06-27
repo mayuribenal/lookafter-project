@@ -38,9 +38,9 @@ class CalendarNeed extends React.Component {
     });
   }
   render() {
-    const { reserveEventsNeed, eventEditorVisible } = this.props;
+    const { reserveEventsNeed, eventEditorVisible, user } = this.props;
     const currentDateTime = moment().toDate();
-
+    console.log('MY PROPS:', this.props);
     return (
       <div className="main">
         <div className="calendar-main">
@@ -62,17 +62,18 @@ class CalendarNeed extends React.Component {
               showMultiDayTimes
               components={{ toolbar: CustomToolbar }}
               eventPropGetter={event => {
+                console.log('MY EVENT ', event);
                 let newStyle = {
                   backgroundColor: '#ff6979',
                   color: 'white',
                   border: 'none'
                 };
-                if (event.hood == 'the callbacks') {
+                if (
+                  event.hood &&
+                  event.user_id === this.props.user.hood &&
+                  this.props.user.id
+                ) {
                   newStyle.backgroundColor = 'rgb(153, 230, 153)';
-                } else if (event.hood == 'promises') {
-                  newStyle.backgroundColor = 'rgb(255, 128, 128)';
-                } else if (event.hood == 'manutos') {
-                  newStyle.backgroundColor = 'rgb(255, 236, 128)';
                 }
                 return {
                   className: '',

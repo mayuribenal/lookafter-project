@@ -116,13 +116,30 @@ app.post('/profile', function(req, res) {
       console.log('error with profile route: ', err);
       // res.json({ error: true });
     });
-}); //end of user route
+}); //end of profile route
+
+app.post('/profile-family', function(req, res) {
+  db.setBioFamily(req.session.userId)
+    .then(data => {
+      console.log('MY DATA', data);
+      res.send({
+        bioimg_id: data.rows[0].bioimg_id,
+        description: data.rows[0].description
+      });
+      res.json({ success: true });
+    })
+    .catch(err => {
+      console.log('error with family profile route: ', err);
+      // res.json({ error: true });
+    });
+}); //end of family profile
+
+/////OTHERPROFILE
 
 // POST PICTURE
 
 app.post('/upload', uploader.single('file'), s3.upload, async (req, res) => {
   try {
-    console.log('SOMETHING!!');
     const pic = await db.addProfilePic(
       config.s3Url + req.file.filename,
       req.session.userId
@@ -176,6 +193,9 @@ app.post('/reserve-date-offer', async (req, res) => {
         end
       );
       res.send(addEv.rows);
+      res.json({
+        usermatch: true
+      });
     } catch (err) {
       console.log(err);
       res.send({
