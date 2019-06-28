@@ -45,7 +45,7 @@ class CalendarNeed extends React.Component {
       <div className="main">
         <div className="calendar-main">
           <h1>
-            your <img src="./400bw.png" width="150px" /> requests
+            your <img src="./400bw.png" width="150px" /> need
           </h1>
           <div className="calendar">
             <BigCalendar

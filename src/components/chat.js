@@ -68,6 +68,7 @@ class Chat extends React.Component {
           >
             <div className="chat-message">
               <p className="words">{message.message}</p>
+              <p>You</p>
               <p id="message-details">
                 {' '}
                 {moment(message['created_at']).fromNow()}

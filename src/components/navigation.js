@@ -31,7 +31,7 @@ class Navigation extends React.Component {
           <Link to="/calendar-offer" className="link">
             <div className="nav-items">
               <img src="calendaroffer.png" />
-              <p>your commitments</p>
+              <p>your availability</p>
             </div>
           </Link>
         </div>
@@ -48,7 +48,7 @@ class Navigation extends React.Component {
           <Link to="/calendar-need" className="link">
             <div className="nav-items">
               <img src="calendaroffer.png" />
-              <p>your requests</p>
+              <p>your need</p>
             </div>
           </Link>
         </div>

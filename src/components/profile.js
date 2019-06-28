@@ -15,7 +15,6 @@ class Profile extends React.Component {
       reserveEventsOffer,
       uploaderVisible
     } = this.props;
-    console.log('MY PROFILE PROPS:', this.props);
     const ratingChanged = newRating => {
       console.log(newRating);
     };
@@ -26,6 +25,7 @@ class Profile extends React.Component {
     const userEventsNeed = reserveEventsNeed
       .filter(ev => user.hood == ev.hood && a <= ev.end)
       .map(ev => {
+        console.log('my events in profile', ev);
         return (
           <div className="schedule-container-need" key={ev.id}>
             <h3>
@@ -55,7 +55,7 @@ class Profile extends React.Component {
           <div className="event-title">
             <img src="heart.png" className="icon-events" />
             <h2>
-              your commitments in{' '}
+              your availability in{' '}
               <span className="capitalize">{user.hood}</span>
             </h2>
           </div>
@@ -63,7 +63,7 @@ class Profile extends React.Component {
           <div className="event-title">
             <img src="heart.png" className="icon-events" />
             <h2>
-              your requests in <span className="capitalize">{user.hood}</span>
+              your needs in <span className="capitalize">{user.hood}</span>
             </h2>
           </div>
         </div>

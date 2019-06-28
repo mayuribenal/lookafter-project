@@ -295,7 +295,6 @@ input[type='password'] {
   position: relative;
   top: 10vh;
   margin-top: 10px;
-  left: 25px;
 }
 
 .header-profile h2 {
@@ -517,7 +516,6 @@ button .add-member {
 
 .ratings {
   display: flex;
-  margin: 10px;
   flex-direction: column;
   width: 20vw;
   height: 20vh;
@@ -542,12 +540,14 @@ button .add-member {
 
 .profiles {
   overflow: scroll;
-  height: 90%;
+  height: 80%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   scrollbar-width: none;
+  position: relative;
+  top: 10vh;
 }
 
 .profile-main {
@@ -637,11 +637,13 @@ button .add-member {
 p.words {
   max-width: 100%;
   word-wrap: break-word;
+  font-size: 18px;
 }
 
 #chat-name {
   color: var(--borders-light-red);
   font-weight: bold;
+  display: flex;
 }
 
 #message-details {
@@ -716,7 +718,7 @@ textarea {
   position: relative;
   border-radius: 25px;
   background-color: white;
-  height: 350px;
+  height: 400px;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -844,6 +846,13 @@ button:active {
 
 .popover-section img {
   cursor: pointer;
+}
+
+.popover-img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 /* HOME */

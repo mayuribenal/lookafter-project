@@ -74,8 +74,17 @@ module.exports.addEventNeed = function(id, hood, name, start, end) {
   return db.query(
     `INSERT INTO calendar_need (user_id, hood, title, event_start, event_end)
         VALUES ($1, $2, $3, $4, $5)
-        RETURNING title, hood, event_start AS start, event_end AS end`,
+        RETURNING title, hood, event_start AS start, event_end AS end
+        `,
     [id, hood, name, start, end]
+  );
+};
+module.exports.getUsersProfile = function(id) {
+  return db.query(
+    `SELECT first, last, img
+        FROM users
+        WHERE id = $1`,
+    [id]
   );
 };
 
@@ -90,9 +99,10 @@ module.exports.addEventOffer = function(id, hood, name, start, end) {
 
 module.exports.getEventsOffer = function(hood) {
   return db.query(
-    `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
+    `SELECT calendar_offer.id, calendar_offer.user_id, calendar_offer.hood, calendar_offer.title, calendar_offer.event_start AS start, calendar_offer.event_end AS end, users.first, users.last, users.img
         FROM calendar_offer
-        WHERE hood = $1
+        JOIN users ON calendar_offer.user_id = users.id
+        WHERE users.hood = $1
         ORDER BY event_start ASC`,
     [hood.toLowerCase()]
   );
@@ -100,9 +110,10 @@ module.exports.getEventsOffer = function(hood) {
 
 module.exports.getEventsNeed = function(hood) {
   return db.query(
-    `SELECT id, user_id, hood, title, event_start AS start, event_end AS end
+    `SELECT calendar_need.id, calendar_need.user_id, calendar_need.hood, calendar_need.title, calendar_need.event_start AS start, calendar_need.event_end AS end, users.first, users.last, users.img
         FROM calendar_need
-        WHERE hood = $1
+        JOIN users ON calendar_need.user_id = users.id
+        WHERE users.hood = $1
         ORDER BY event_start ASC`,
     [hood.toLowerCase()]
   );

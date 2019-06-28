@@ -48,6 +48,10 @@ class Popover extends React.Component {
               From {moment(this.props.eventInfo.start).format('HH:mm')} to{' '}
               {moment(this.props.eventInfo.end).format('HH:mm')}
             </p>
+            <p>
+              by {this.props.eventInfo.first} {this.props.eventInfo.last}
+            </p>
+            <img className="popover-img" src={this.props.eventInfo.img} />
             <div className="popover-section">
               <button
                 className="event-button"

@@ -223,6 +223,8 @@ app.post('/reserve-date-need', async (req, res) => {
         start,
         end
       );
+      const usersProf = await db.getUsersProfile(req.session.userId);
+
       res.send(addEv.rows);
     } catch (err) {
       console.log(err);

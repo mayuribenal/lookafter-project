@@ -83,7 +83,7 @@ class Home extends React.Component {
                   <h3 className="home-title">step 3</h3>
                   <img src="calendaroffer.png" />
                   <p>
-                    <strong>your request</strong>
+                    <strong>your need</strong>
                   </p>
                   <p>
                     select the date and time that you need a member to look
@@ -96,7 +96,7 @@ class Home extends React.Component {
                   <h3 className="home-title">step 4</h3>
                   <img src="calendaroffer.png" />
                   <p>
-                    <strong>your commitment</strong>
+                    <strong>your availability</strong>
                   </p>
                   <p>
                     select the date and time that suits you to support a member
