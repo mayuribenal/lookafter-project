@@ -10,7 +10,7 @@ const Welcome = () => {
     <div className="welcome">
       <div className="logo-welcome">
         <Fade left>
-          <img id="logofront" src="./400bw.png" />
+          <img id="logofront" src="./LA.png" />
         </Fade>
         <Fade top delay={1500}>
           <h1>Sometime. Somehow.</h1>

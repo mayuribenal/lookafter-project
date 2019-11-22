@@ -891,6 +891,7 @@ button:active {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
+  font-size: 23px;
 }
 .about {
   display: flex;
@@ -916,6 +917,7 @@ button:active {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
+  font-size: 23px;
 }
 .mission {
   display: flex;
@@ -945,6 +947,7 @@ button:active {
 .home-y p {
   text-align: center;
   margin: 10px;
+  font-size: 23px;
 }
 
 .home-a {
@@ -980,12 +983,14 @@ button:active {
   margin-right: 20px;
   text-align: center;
   margin: 10px;
+  font-size: 23px;
 }
 .home-a p {
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
   margin: 10px;
+  font-size: 23px;
 }
 
 .home-box-z {
@@ -1014,6 +1019,7 @@ button:active {
   margin-right: 20px;
   text-align: center;
   margin: 10px;
+  font-size: 23px;
 }
 
 .home-title-m {
@@ -1048,6 +1054,7 @@ button:active {
   margin-right: 20px;
   text-align: center;
   margin: 10px;
+  font-size: 23px;
 }
 .match {
   display: flex;
@@ -1083,6 +1090,7 @@ button:active {
 .home-i p {
   text-align: center;
   margin: 10px;
+  font-size: 23px;
 }
 .important {
   display: flex;

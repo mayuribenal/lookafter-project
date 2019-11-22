@@ -19,21 +19,17 @@ class Home extends React.Component {
                 <h3 className="home-title">about us</h3>
               </div>
               <p>
-                we are a community of people that love pets and plants and take
-                them as part of our family. we believe that through human
-                connection and collective support we can create a more loving
-                and healthier atmosphere and spread that to those around us.{' '}
+                we are a community of people that love plants. we believe that
+                through human connection and collective support we can create a
+                more loving and healthier atmosphere and spread that to those
+                around us.{' '}
               </p>
             </div>
             <div className="home-x">
               <div className="mission">
                 <h3 className="home-title">our mission</h3>
               </div>
-              <p>
-                to connect to our community by committing to share our support
-                and our needs through a group calendar so that our members can
-                look after their pets and plants.
-              </p>
+              <p>make the world greener thru communities!</p>
             </div>
           </div>
           <div className="how-it-works-wrap">
@@ -46,7 +42,7 @@ class Home extends React.Component {
                   <p>
                     <strong>registration</strong>
                   </p>
-                  <p>input your information and select your neighborhood</p>
+                  <p>input your information and select your location.</p>
                 </div>
               </Fade>
               <Fade right delay={800}>
@@ -57,8 +53,8 @@ class Home extends React.Component {
                     <strong>add bio</strong>
                   </p>
                   <p>
-                    add your bio and your family member(s) in your profile(make
-                    sure to include all the important instructions)
+                    add your bio and your plant(s) in your profile (make sure to
+                    include all the important instructions).
                   </p>
                 </div>
               </Fade>
@@ -70,9 +66,9 @@ class Home extends React.Component {
                   </div>
                   <p>
                     we highly encourage people to meet each other face to face.
-                    Real communication and a short introduction to the pets and
-                    plants are extremely helpful for a smooth community support.
-                    The location is probably just around the corner from you
+                    Real communication and a short introduction to the plants
+                    are extremely helpful for a smooth community support. The
+                    location is probably just around the corner from you.
                   </p>
                 </div>
               </Fade>
@@ -87,7 +83,7 @@ class Home extends React.Component {
                   </p>
                   <p>
                     select the date and time that you need a member to look
-                    after your pets and plants.
+                    after your plants.
                   </p>
                 </div>
               </Fade>
@@ -100,7 +96,7 @@ class Home extends React.Component {
                   </p>
                   <p>
                     select the date and time that suits you to support a member
-                    by looking after their pets and plants
+                    by looking after their plants.
                   </p>
                 </div>
               </Fade>
@@ -115,7 +111,7 @@ class Home extends React.Component {
                   <p>
                     <strong>it's a match!</strong>
                   </p>
-                  <p>communicate and organize to meet</p>
+                  <p>communicate and organize to meet.</p>
                 </div>
               </Fade>
             </div>
